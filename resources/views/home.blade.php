@@ -15,7 +15,7 @@
                     @endif
 
                     {{ __('You are logged in!') }}
-                    <a href="data"><button class="btn btn-primary">Cek Data Barang</button></a>
+                    <a href={{Route('dataBarang.index')}}><button class="btn btn-primary">Cek Data Barang</button></a>
                 </div>
             </div>
         </div>

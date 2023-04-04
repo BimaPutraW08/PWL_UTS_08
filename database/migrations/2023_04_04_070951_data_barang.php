@@ -14,10 +14,14 @@ return new class extends Migration
     public function up()
     {
         Schema::create('dataBarang', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->string('kode_barang')->primary();
+            $table->string('nama_barang')->nullable();
+            $table->string('kategori_barang')->nullable();
+            $table->integer('harga')->nullable();
+            $table->integer('qty')->nullable();
         });
     }
+
 
     /**
      * Reverse the migrations.
@@ -26,6 +30,12 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('dataBarang');
+        Schema::create('dataBarang', function (Blueprint $table) {
+            $table->string('kode_barang')->primary();
+            $table->string('nama_barang')->nullable();
+            $table->string('kategori_barang')->nullable();
+            $table->string('harga')->nullable();
+            $table->string('qty')->nullable();
+        });
     }
 };
