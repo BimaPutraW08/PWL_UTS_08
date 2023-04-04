@@ -22,10 +22,7 @@ class DataController extends Controller
             ->orWhere('kategori_barang', 'like', "%$search%")
             ->paginate(6);
         } else {
-            $dataBarang = DB::table('dataBarang')->paginate(6);   
-                    //fungsi eloquent menampilkan data menggunakan pagination 
-        // $mahasiswas = Mahasiswa::all(); // Mengambil semua isi tabel
-        // $posts = Mahasiswa::orderBy('Nim', 'desc')->paginate(5);   
+            $dataBarang = DB::table('dataBarang')->paginate(6);     
         }
         return view('dataBarang.index', ['dataBarang' => $dataBarang]);
     
